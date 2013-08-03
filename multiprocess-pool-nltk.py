@@ -12,7 +12,7 @@
 #      -- on a single CPU, it took .97s with one process; 1.2s with four processes
 
 def chunker(tokens, chunks):
-    '''this function chunks a set of tokens based on a number of chunks; each "chunk" of tokens will be sent to a separate process'''
+    '''this function -- generator -- chunks a set of tokens based on a number of chunks; each "chunk" of tokens will be sent to a separate process'''
     length = len(tokens) #the total number of tokens in the original
     chunk_size = len(tokens) / chunks #the size of each chunk (num of tokens / chunk)
     for x in xrange(0, length, chunk_size): #go through the original tokens in an increment equal to the size of each chunk
